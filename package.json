@@ -15,10 +15,12 @@
   "dependencies": {
     "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.21",
+    "@types/http-errors": "^2.0.4",
     "@types/node": "^20.12.7",
     "@types/nodemon": "^1.19.6",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "http-errors": "^2.0.0",
     "mongoose": "^8.3.2",
     "nodemon": "^3.1.0",
     "ts-node": "^10.9.2"
