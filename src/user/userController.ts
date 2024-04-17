@@ -31,6 +31,22 @@ const createUser = async (req: Request, res: Response, next: NextFunction) => {
     return next(createHttpError(500, "Error creating user"));
   }
 
-  
+  //user status
+  try {
+    const userStatus = newUser.email;
+    res.json({ userStatus });
+  } catch (error) {
+    return next(createHttpError(500, "Error creating user"));
+  }
+};
+
+const getdata = async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const data = await userModel.find();
+    res.json({ data });
+  } catch (error) {
+    return next(createHttpError(500, "error while getting user..."));
+  }
+};
 
 export { createUser, getdata };
