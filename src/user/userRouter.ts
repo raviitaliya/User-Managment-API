@@ -1,12 +1,19 @@
-import express from 'express';
-import {createUser,getdata} from './userController';
+import express from "express";
+import { createUser, getdata , update } from "./userController";
+import multer from "multer";
+import path from "path";
 
 const userRouter = express.Router();
 
-userRouter.post("/register",createUser);
+const fileUpload = multer({
+    dest: path.resolve(__dirname,'../../public/data/uploads')
+});
 
-userRouter.get("/data",getdata);
+userRouter.post("/user", fileUpload.single('photo'), createUser);
 
+userRouter.get("/user", getdata);
+
+userRouter.put("/user", update);
 
 
 export default userRouter;
